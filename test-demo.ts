@@ -12,11 +12,11 @@ test('Something that needs a deployed process model to exist', async () => {
   })
 })
 
-test('Something that needs a running process instance', () => {
+test('Something that needs a running process instance', async () => {
   const filename = './test-fixtures/basic-process.bpmn'
   const variables = { testVar: 'someValue' }
 
-  when([processStarted(filename, variables)], (context, client) => {
+  await when([processStarted(filename, variables)], (context, client) => {
     // test goes here
     // context has processDefinitionKey, processDefinitionId, processDefinitionVersion, and processInstanceKey
     console.log(context)
