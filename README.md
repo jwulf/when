@@ -36,7 +36,9 @@ test('Something that needs a running process instance', async () => {
 })
 ```
 
-The DSL in [when.ts](./when.ts) is a quick sketch, but it scaffolds the type system needed to provide a strongly typed context and client in when block.
+The DSL in [when.ts](./when.ts) is a quick sketch, but it scaffolds the type system needed to provide a strongly typed context and client in `when` block.
+
+There are a couple of demonstration tests in [test-demo.ts](./test-demo.ts). Open them in VSCode to see how the Intellisense works.
 
 ## Limitations of POC implementation
 
