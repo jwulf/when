@@ -14,7 +14,8 @@ export async function when<T extends readonly PrerequisiteOperation<any>[]>(
   test: (context: MergeTuple<T>, client: CamundaRestClient) => void | Promise<void>,
   options: WhenOptions = {}
 ): Promise<void> {
-  const client = options.client ?? options.sdk?.getCamundaRestClient() ?? new Camunda8().getCamundaRestClient()
+
+  const client = options.client ?? options.sdk?.getCamundaRestClient() ?? new Camunda8().getCamundaRestClient() // Zero-conf constructor for matrix runs. All config via env vars.
   let context = {} as MergeTuple<T>
   for (const prereq of prerequisites) {
     context = { ...context, ...(await prereq(client)) }
