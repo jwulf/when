@@ -2,7 +2,7 @@ import { Camunda8, CamundaRestClient } from '@camunda8/sdk'
 
 /**
  * Optional configuration for the when() orchestration.
- * Provide an existing Zeebe gRPC client (or sdk) to reuse connections, otherwise a new Camunda8 instance is created.
+ * Provide an existing CamundaRestClient (or Camunda JS SDK) to reuse connections, otherwise a new Camunda8 instance is created.
  */
 export interface WhenOptions {
   client?: CamundaRestClient
